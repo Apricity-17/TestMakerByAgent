@@ -1,0 +1,27 @@
+model:
+  provider: deepseek
+  name: deepseek-v4-pro
+  temperature: 0.3
+  max_tokens: 4096
+
+agent:
+  max_iterations: 5
+  target_coverage: 0.90
+  test_dir: tests
+  retry_on_failure: 3
+  code_timeout: 60
+
+memory:
+  long_term_path: ~/.testmaker/memory.db
+
+skills:
+  dir: src/skills/data
+  auto_load: true
+
+logging:
+  level: INFO
+  file: ~/.testmaker/agent.log
+
+claude:
+  model: claude-sonnet-4-6
+  max_tokens: 4096
